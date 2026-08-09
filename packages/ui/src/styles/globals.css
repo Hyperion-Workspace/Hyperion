@@ -327,8 +327,8 @@
 
 /* Firefox — scrollbar-width + scrollbar-color */
 .terminal-scrollbar .xterm-viewport {
-  scrollbar-width: thin;
   scrollbar-color: rgba(161, 158, 149, 0.2) transparent;
+  scrollbar-width: thin;
 }
 
 .terminal-scrollbar .xterm-viewport:hover {

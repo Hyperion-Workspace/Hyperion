@@ -1,6 +1,5 @@
 "use client";
 
-import { AgentSidebar } from "@workspace/core/components/agent/agent-sidebar";
 import { NewWorkspaceDialog } from "@workspace/core/components/common/new-workspace-dialog";
 import { TerminalGrid } from "@workspace/core/components/terminal/terminal-grid";
 import { useMounted } from "@workspace/core/hooks/use-mounted";
@@ -57,7 +56,6 @@ export function WorkspacePage() {
       <div className="flex flex-1 flex-col overflow-hidden">
         <TerminalGrid />
       </div>
-      <AgentSidebar />
     </div>
   );
 }
