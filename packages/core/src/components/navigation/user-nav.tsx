@@ -39,12 +39,26 @@ interface UserNavProps {
 
 const hasClerkPublishableKey = !!(
   typeof process !== "undefined" &&
-  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.trim()
 );
 
-const isNativeApp =
-  typeof process !== "undefined" &&
-  process.env.NEXT_PUBLIC_IS_NATIVE === "true";
+function checkIsNativeApp(): boolean {
+  if (
+    typeof process !== "undefined" &&
+    process.env.NEXT_PUBLIC_IS_NATIVE === "true"
+  ) {
+    return true;
+  }
+  if (
+    typeof window !== "undefined" &&
+    ("__TAURI__" in window ||
+      "__TAURI_INTERNALS__" in window ||
+      "__TAURI_POST_MESSAGE__" in window)
+  ) {
+    return true;
+  }
+  return false;
+}
 
 function UserNavBase({
   displayUser,
@@ -187,7 +201,7 @@ function NativeUserNav({ defaultUser }: { defaultUser: UserNavUser }) {
 }
 
 export function UserNav({ user: defaultUser }: UserNavProps) {
-  if (!isNativeApp && hasClerkPublishableKey) {
+  if (!checkIsNativeApp() && hasClerkPublishableKey) {
     return <ClerkUserNav defaultUser={defaultUser} />;
   }
   return <NativeUserNav defaultUser={defaultUser} />;

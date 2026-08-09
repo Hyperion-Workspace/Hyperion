@@ -67,7 +67,7 @@ export function AiProviderCard() {
   const [isLoading, setIsLoading] = useState(false);
   const [checkingHealth, setCheckingHealth] = useState(false);
   const [providerError, setProviderError] = useState<string | null>(null);
-  const [lastCheckTime, setLastCheckTime] = useState<number>(0);
+  const [_lastCheckTime, setLastCheckTime] = useState<number>(0);
   const [cooldownSeconds, setCooldownSeconds] = useState(0);
   const cooldownRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const lastCheckTimeRef = useRef<number>(0);
@@ -187,8 +187,12 @@ export function AiProviderCard() {
 
     // Rate limit: enforce minimum interval between checks
     if (timeSinceLastCheck < RATE_LIMIT_MS) {
-      const waitSeconds = Math.ceil((RATE_LIMIT_MS - timeSinceLastCheck) / 1000);
-      toast.error(`Rate limited. Please wait ${waitSeconds}s before checking again.`);
+      const waitSeconds = Math.ceil(
+        (RATE_LIMIT_MS - timeSinceLastCheck) / 1000
+      );
+      toast.error(
+        `Rate limited. Please wait ${waitSeconds}s before checking again.`
+      );
       return;
     }
 
@@ -221,7 +225,11 @@ export function AiProviderCard() {
 
     try {
       // Batch all health updates into a single state change
-      const healthUpdates: { backend?: boolean; provider?: boolean; planner?: boolean } = {};
+      const healthUpdates: {
+        backend?: boolean;
+        provider?: boolean;
+        planner?: boolean;
+      } = {};
 
       // 1. Check Backend (Tauri check)
       const isTauri =

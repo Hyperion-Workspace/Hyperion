@@ -65,10 +65,6 @@ async function applyTemplates(
   s.start("Applying project templates…");
   const templatesDir = path.resolve(__dirname, "..", "templates");
 
-  const docsTarget = path.join(projectDir, "apps", "web", "content", "docs");
-  await fs.remove(docsTarget);
-  await fs.copy(path.join(templatesDir, "docs"), docsTarget);
-
   const readmeTemplate = await fs.readFile(
     path.join(templatesDir, "README.md"),
     "utf-8"

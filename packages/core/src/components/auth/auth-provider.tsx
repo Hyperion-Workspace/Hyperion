@@ -14,12 +14,26 @@ interface AuthProviderProps {
 /** Resolved at build time by Next.js env replacement. */
 const hasClerkPublishableKey = !!(
   typeof process !== "undefined" &&
-  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.trim()
 );
 
-const isNativeApp =
-  typeof process !== "undefined" &&
-  process.env.NEXT_PUBLIC_IS_NATIVE === "true";
+function checkIsNativeApp(): boolean {
+  if (
+    typeof process !== "undefined" &&
+    process.env.NEXT_PUBLIC_IS_NATIVE === "true"
+  ) {
+    return true;
+  }
+  if (
+    typeof window !== "undefined" &&
+    ("__TAURI__" in window ||
+      "__TAURI_INTERNALS__" in window ||
+      "__TAURI_POST_MESSAGE__" in window)
+  ) {
+    return true;
+  }
+  return false;
+}
 
 function NativeAuthGate({ children }: { children: React.ReactNode }) {
   const { session, isLoaded, initAuth } = useAuthStore();
@@ -45,10 +59,14 @@ function NativeAuthGate({ children }: { children: React.ReactNode }) {
 
   const handleSignIn = async () => {
     setConnecting(true);
+    const origin =
+      typeof window !== "undefined" && window.location.origin
+        ? window.location.origin
+        : "http://localhost:3000";
     const webUrl =
       process.env.NEXT_PUBLIC_WEB_URL ||
       (process.env.NODE_ENV === "development"
-        ? "http://localhost:3002"
+        ? origin
         : siteConfig.links.website);
 
     const authUrl = `${webUrl}/auth/app-login?port=8787`;
@@ -85,6 +103,15 @@ function NativeAuthGate({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const handleQuickSignIn = () => {
+    useAuthStore.getState().setSession({
+      session_id: `local-session-${Date.now()}`,
+      user_id: "local-developer",
+      email: "dev@hyperion.app",
+      name: "Hyperion Developer",
+    });
+  };
+
   if (!isLoaded) {
     return (
       <div className="flex min-h-screen flex-1 items-center justify-center bg-background">
@@ -105,23 +132,32 @@ function NativeAuthGate({ children }: { children: React.ReactNode }) {
               Sign in to Hyperion
             </h1>
             <p className="text-muted-foreground text-sm">
-              Authentication is safely handled via the Hyperion web portal.
-              Click below to connect your session.
+              Authentication is safely handled via the web portal or instant
+              local session. Click below to connect.
             </p>
           </div>
-          <button
-            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground shadow-md transition-all hover:opacity-90 disabled:opacity-50"
-            disabled={connecting}
-            onClick={handleSignIn}
-            type="button"
-          >
-            {connecting ? (
-              <Loader2 className="size-5 animate-spin" />
-            ) : (
-              <ExternalLink className="size-5" />
-            )}
-            {connecting ? "Opening Browser..." : "Sign In with Web Portal"}
-          </button>
+          <div className="flex w-full flex-col gap-3">
+            <button
+              className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground shadow-md transition-all hover:opacity-90 disabled:opacity-50"
+              disabled={connecting}
+              onClick={handleSignIn}
+              type="button"
+            >
+              {connecting ? (
+                <Loader2 className="size-5 animate-spin" />
+              ) : (
+                <ExternalLink className="size-5" />
+              )}
+              {connecting ? "Opening Browser..." : "Sign In via Web Portal"}
+            </button>
+            <button
+              className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-border/80 bg-muted/30 px-5 py-2.5 font-medium text-foreground text-sm transition-all hover:bg-muted/60"
+              onClick={handleQuickSignIn}
+              type="button"
+            >
+              Quick Sign In (Local Dev)
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -156,7 +192,7 @@ function ClerkAuthGate({ children }: { children: React.ReactNode }) {
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  if (!isNativeApp && hasClerkPublishableKey) {
+  if (!checkIsNativeApp() && hasClerkPublishableKey) {
     return <ClerkAuthGate>{children}</ClerkAuthGate>;
   }
 
