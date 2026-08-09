@@ -21,11 +21,6 @@
         },
         {
           "type": "json",
-          "path": "apps/web/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
           "path": "packages/ui/package.json",
           "jsonpath": "$.version"
         },

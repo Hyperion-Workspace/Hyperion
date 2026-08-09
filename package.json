@@ -11,7 +11,6 @@
     "typecheck": "turbo typecheck",
     "shadcn": "pnpm --filter @workspace/ui shadcn",
     "tauri": "pnpm --filter native tauri",
-    "web": "pnpm --filter web",
     "deps:check": "taze -r",
     "deps:update": "taze -r -w -i -I"
   },

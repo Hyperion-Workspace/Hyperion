@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  env: {
+    NEXT_PUBLIC_IS_NATIVE: "true",
+  },
   transpilePackages: ["@workspace/ui", "@workspace/core", "@workspace/i18n"],
 };
 

@@ -1,6 +1,5 @@
 mod terminal;
 mod ai;
-mod orchestrator;
 mod auth;
 
 use serde::Serialize;
@@ -40,15 +39,6 @@ pub fn run() {
       terminal::get_terminal_history,
       terminal::close_terminal,
       ai::call_llm_stream,
-      orchestrator::start_orchestration,
-      orchestrator::register_terminal,
-      orchestrator::unregister_terminal,
-      orchestrator::terminal_heartbeat,
-      orchestrator::task_acknowledged,
-      orchestrator::task_status_update,
-      orchestrator::cancel_orchestration,
-      orchestrator::add_iteration,
-      orchestrator::get_orchestration_state,
       auth::save_session,
       auth::get_session,
       auth::clear_session,

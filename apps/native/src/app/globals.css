@@ -1,9 +1,7 @@
 @import "@workspace/ui/globals.css";
 
 /* ==========================================================================
-   Native app palette — synced from the web marketing site's monochrome
-   plate (see `.landing-theme` in apps/web/app/globals.css). Strict
-   three-anchor monochrome, no hue anywhere:
+   Native app palette — strict three-anchor monochrome, no hue anywhere:
      Black    #080705 — dominant surface
      Graphite #3A3A3A — borders/structure; card/popover/secondary/accent
               are darker steps on the black→graphite axis

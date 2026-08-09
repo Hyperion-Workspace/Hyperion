@@ -161,14 +161,6 @@ jobs:
             exit 1
           fi
 
-      - name: Upload build artifacts (web)
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-build
-          path: apps/web/.next/
-          if-no-files-found: ignore
-          retention-days: 3
-
       - name: Upload build artifacts (CLI)
         uses: actions/upload-artifact@v4
         with:
