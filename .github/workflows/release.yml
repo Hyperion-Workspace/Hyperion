@@ -88,7 +88,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: apps/native/src-tauri -> target
+          workspaces: src-tauri -> target
 
       - name: Install Linux dependencies
         if: matrix.platform == 'ubuntu-22.04'
@@ -114,7 +114,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_ZHVtbXktcHVibGlzaGFibGUta2V5"
         with:
-          projectPath: apps/native
+          projectPath: .
           tauriScript: pnpm tauri
           releaseId: ${{ needs.create-release.outputs.release_id }}
           args: ${{ matrix.args }}
@@ -124,8 +124,8 @@ jobs:
       - name: Package archive (Linux)
         if: matrix.os_name == 'linux'
         run: |
-          BINARY=$(find apps/native/src-tauri/target/release/bundle -name "*.AppImage" 2>/dev/null | head -1)
-          [ -z "$BINARY" ] && BINARY="apps/native/src-tauri/target/release/hyperion"
+          BINARY=$(find src-tauri/target/release/bundle -name "*.AppImage" 2>/dev/null | head -1)
+          [ -z "$BINARY" ] && BINARY="src-tauri/target/release/hyperion"
 
           if [ -f "$BINARY" ]; then
             mkdir -p /tmp/hyperion-pkg
@@ -139,8 +139,8 @@ jobs:
       - name: Package archive (macOS)
         if: matrix.os_name == 'darwin'
         run: |
-          BINARY=$(find apps/native/src-tauri/target/universal-apple-darwin/release -name "hyperion" 2>/dev/null | head -1)
-          [ -z "$BINARY" ] && BINARY="apps/native/src-tauri/target/universal-apple-darwin/release/hyperion"
+          BINARY=$(find src-tauri/target/universal-apple-darwin/release -name "hyperion" 2>/dev/null | head -1)
+          [ -z "$BINARY" ] && BINARY="src-tauri/target/universal-apple-darwin/release/hyperion"
 
           if [ -f "$BINARY" ]; then
             mkdir -p /tmp/hyperion-pkg
@@ -155,7 +155,7 @@ jobs:
         if: matrix.os_name == 'windows'
         shell: pwsh
         run: |
-          $binary = Get-ChildItem -Path "apps/native/src-tauri/target/release" -Filter "hyperion.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+          $binary = Get-ChildItem -Path "src-tauri/target/release" -Filter "hyperion.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
           if ($binary) {
             New-Item -ItemType Directory -Force -Path "$env:TEMP/hyperion-pkg" | Out-Null
             Copy-Item $binary.FullName "$env:TEMP/hyperion-pkg/hyperion.exe"

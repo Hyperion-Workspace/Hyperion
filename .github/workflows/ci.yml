@@ -2,9 +2,8 @@
 #
 # Designed like a big open-source CI pipeline:
 #   - lint  → formatting + static analysis via ultracite/biome
-#   - typecheck → TypeScript type-checking across all packages
-#   - test  → unit tests (vitest, etc.)
-#   - build → turborepo build (Next.js apps, CLI, etc.)
+#   - typecheck → TypeScript type-checking
+#   - build → next build
 #
 # SECURITY: ZERO environment variables required.
 # This public repo never ships secrets. The Clerk provider gracefully
@@ -95,39 +94,6 @@ jobs:
       - name: Type-check
         run: pnpm typecheck
 
-  test:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run tests (CLI package)
-        working-directory: packages/cli
-        run: pnpm test -- --reporter verbose
-
-      - name: Upload coverage (if generated)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage
-          path: packages/cli/coverage/
-          if-no-files-found: ignore
-          retention-days: 7
-
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -148,26 +114,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build all packages & apps
+      - name: Build
         run: pnpm build
-
-      - name: Verify CLI binary exists
-        run: |
-          if [ -f packages/cli/dist/index.js ]; then
-            echo "✅ CLI build successful"
-            node packages/cli/dist/index.js --version 2>/dev/null || echo "(version flag may not exist yet — binary is present)"
-          else
-            echo "❌ CLI dist/index.js not found!"
-            exit 1
-          fi
-
-      - name: Upload build artifacts (CLI)
-        uses: actions/upload-artifact@v4
-        with:
-          name: cli-build
-          path: packages/cli/dist/
-          if-no-files-found: ignore
-          retention-days: 3
 
   # Dependency check — catch unused / outdated dependencies
   deps:
@@ -197,7 +145,7 @@ jobs:
   summary:
     name: CI Summary
     if: always()
-    needs: [lint, typecheck, test, build, deps]
+    needs: [lint, typecheck, build, deps]
     runs-on: ubuntu-latest
     steps:
       - name: Check job outcomes
@@ -206,6 +154,5 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- **lint**: ${{ needs.lint.result }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- **typecheck**: ${{ needs.typecheck.result }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **test**: ${{ needs.test.result }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- **build**: ${{ needs.build.result }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- **deps**: ${{ needs.deps.result }}" >> "$GITHUB_STEP_SUMMARY"

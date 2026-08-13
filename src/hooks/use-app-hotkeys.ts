@@ -1,0 +1,66 @@
+"use client";
+
+import { hotkeys } from "@/config/hotkeys";
+import { useCommandPaletteStore } from "@/stores/command-palette-store";
+import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
+import { useSidebar } from "@/components/sidebar";
+import { useHotkeys } from "react-hotkeys-hook";
+
+interface UseAppHotkeysOptions {
+  navigate: (path: string) => void;
+}
+
+export function useAppHotkeys({ navigate }: UseAppHotkeysOptions) {
+  const { toggleSidebar } = useSidebar();
+  const toggleHotkeysDialog = useHotkeysDialogStore((s) => s.toggle);
+  const toggleCommandPalette = useCommandPaletteStore((s) => s.toggle);
+
+  const getKeys = (id: string) => hotkeys.find((h) => h.id === id)?.keys || "";
+
+  // Command Palette
+  useHotkeys(
+    getKeys("command-palette"),
+    (e: KeyboardEvent) => {
+      e.preventDefault();
+      toggleCommandPalette();
+    },
+    { enableOnFormTags: false, delimiter: "|" }
+  );
+
+  // Toggle Sidebar
+  useHotkeys(
+    getKeys("toggle-sidebar"),
+    (e: KeyboardEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSidebar();
+    },
+    {
+      enableOnFormTags: false,
+      delimiter: "|",
+      eventListenerOptions: {
+        capture: true,
+      },
+    }
+  );
+
+  // Go to Settings
+  useHotkeys(
+    getKeys("go-settings"),
+    (e: KeyboardEvent) => {
+      e.preventDefault();
+      navigate("/settings");
+    },
+    { enableOnFormTags: false }
+  );
+
+  // Show Keyboard Shortcuts
+  useHotkeys(
+    getKeys("show-hotkeys"),
+    (e: KeyboardEvent) => {
+      e.preventDefault();
+      toggleHotkeysDialog();
+    },
+    { enableOnFormTags: false, useKey: true }
+  );
+}

@@ -16,45 +16,15 @@
       "extra-files": [
         {
           "type": "json",
-          "path": "apps/native/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/ui/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/i18n/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/core/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "apps/native/src-tauri/tauri.conf.json",
+          "path": "src-tauri/tauri.conf.json",
           "jsonpath": "$.version"
         },
         {
           "type": "toml",
-          "path": "apps/native/src-tauri/Cargo.toml",
+          "path": "src-tauri/Cargo.toml",
           "jsonpath": "$.package.version"
         }
       ]
-    },
-    "packages/cli": {
-      "release-type": "node",
-      "bump-minor-pre-major": true,
-      "bump-patch-for-minor-pre-major": true,
-      "include-component-in-tag": true,
-      "tag-separator": "@",
-      "version-file": "package.json",
-      "component": "create-hyperion",
-      "package-name": "create-hyperion"
     }
   },
   "changelog-sections": [
