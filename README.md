@@ -48,7 +48,7 @@ Hyperion collapses that loop into **a single view**. Every project gets its own 
 | Switching between five tools | One workspace, one view |
 | One project at a time | Multi-workspace sidebar |
 
-The desktop and web client is fully open source and lives in this repository.
+The desktop and mobile client is fully open source and lives in this repository.
 
 ---
 
@@ -131,12 +131,12 @@ Define task dependencies. Hyperion orchestrates the execution order.
 ## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
+┌─────────────────────────────────────────────────────────┐
 │                  HYPERION SHELL                      │
-│           (Tauri 2 Desktop / Next.js Web)            │
-├───────────┬─────────────────────────────────────────┤
+│            (Tauri 2 Desktop / Mobile)                │
+├─────────┬──────────────────────────────────────────┐
 │ SIDEBAR   │            WORKSPACE VIEW               │
-├───────────┼─────────────────────────────────────────┤
+├─────────┼──────────────────────────────────────────┤
 │ Backend: Workshop Manager · PTY Pool · Agent Spawner │
 │          Task Scheduler · WebSocket · SQLite        │
 └─────────────────────────────────────────────────────┘
@@ -150,15 +150,15 @@ Define task dependencies. Hyperion orchestrates the execution order.
 
 | Layer | Technology | Purpose |
 |:------|:-----------|:--------|
-| **Shell** | Tauri 2 / Next.js 16 | Cross-platform desktop + web |
+| **Shell** | Tauri 2 / Next.js 16 | Cross-platform desktop + mobile |
 | **UI** | React 19 + Tailwind v4 + shadcn/ui | Design system (40+ themes) |
 | **State** | Zustand + localStorage | Workspace + agent state |
 | **Terminal** | xterm.js + node-pty | Multi-pane terminal grid |
 | **Agent Runtime** | Vercel AI SDK / LangChain | LLM agent orchestration |
 | **Drag & Drop** | @dnd-kit | Task board interactions |
 | **Real-time** | WebSocket | Terminal I/O + agent status |
-| **Persistence** | SQLite (Tauri) / Supabase (Web) | Workspaces + prompts + tasks |
-| **Build** | Turborepo + pnpm | Monorepo tooling |
+| **Persistence** | SQLite (Tauri) | Workspaces + prompts + tasks |
+| **Build** | pnpm | Single flat Next.js + Tauri app |
 
 ---
 
@@ -178,8 +178,8 @@ cd Hyperion
 # Install dependencies
 pnpm install
 
-# Run web app
-pnpm web dev
+# Run the dev server
+pnpm dev
 
 # Run desktop app
 pnpm tauri dev
@@ -197,21 +197,19 @@ pnpm tauri dev
 
 ## 📁 Project Structure
 
+Hyperion is a single, flat Tauri 2 + Next.js application — no monorepo, one `package.json`.
+
 ```
-apps/
-  web/                    Next.js (SSR) — web app + PWA
-  native/                 Tauri 2 — desktop & mobile
+src/
+  app/                    Next.js App Router pages ([locale] routing)
+  pages/                  workspace, terminal, kanban layouts
+  components/              terminal/agents/kanban/prompts + shadcn/ui primitives
+  stores/                 workspace, terminal, agent, kanban, prompt state
+  hooks/                  use-workspace, use-pty, use-agent
+  i18n/                   translations (next-intl)
+  config/                 site, navigation, hotkeys, notifications
 
-packages/
-  core/                   Shared logic
-  ├── pages/              workspace, terminal, kanban layouts
-  ├── components/         terminal/agents/kanban/prompts
-  ├── stores/             workspace, terminal, agent, kanban, prompt state
-  └── hooks/              use-workspace, use-pty, use-agent
-
-  ui/                     Design system: shadcn/ui + 40 themes
-  i18n/                   10-language translations
-  cli/                    Scaffolding tool
+src-tauri/                Tauri 2 — desktop & mobile shell
 ```
 
 ---

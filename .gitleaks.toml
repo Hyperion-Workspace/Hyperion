@@ -40,5 +40,5 @@ regexes = [
 # Allow specific file-level exclusions
 [[allowlist.allowlist]]
 paths = [
-  "apps/native/.env.local",
+  ".env.local",
 ]

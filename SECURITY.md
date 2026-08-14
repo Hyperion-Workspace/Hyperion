@@ -64,9 +64,7 @@ If a report is accepted, we will credit you (unless you prefer to remain anonymo
 
 This policy covers the **Hyperion application**, which is open source and maintained in this repository:
 
-- Desktop client (Tauri 2)
-- Web client (Next.js)
-- Shared packages (`packages/core`, `packages/ui`, `packages/cli`, etc.)
+- Desktop and mobile client (Tauri 2 + Next.js)
 - Terminal/PTY handling, agent spawning, and WebSocket communication code contained in this repository
 
 ### Out of Scope
