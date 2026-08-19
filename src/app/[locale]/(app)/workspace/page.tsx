@@ -1,4 +1,4 @@
-import { WorkspacePage } from "@/pages/workspace-page";
+import { WorkspacePage } from "@/views/workspace-page";
 
 export default function Workspace() {
   return <WorkspacePage />;
