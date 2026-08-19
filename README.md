@@ -110,9 +110,9 @@ Every project is a fully isolated environment. Switch workspaces and the termina
 
 ```
 ┌──────────┐
-│ 🟢 auth   │ ← active
-│ ⚪ api     │
-│ ⚪ mobile  │
+│ 🟢 auth  │ ← active
+│ ⚪ api   │
+│ ⚪ mobile│
 │ + Create  │
 └──────────┘
 ```
@@ -131,8 +131,8 @@ Run multiple AI coding agents side by side, each in its own scoped terminal pane
 ```
 ┌──────────┬──────────┐
 │ Agent-1  │ Agent-2  │
-│ 🔨 Auth  │ 🔨 API   │
-│   ✅     │   🔄     │
+│ 🔨 Auth  │ 🔨 API  │
+│   ✅     │   🔄    │
 └──────────┴──────────┘
 ```
 
@@ -194,13 +194,13 @@ Agent-4: write integration tests
 ```
 ┌────────────────────────────────────────────────────┐
 │                   HYPERION SHELL                    │
-│              Tauri 2 · Desktop & Mobile              │
+│              Tauri 2 · Desktop & Mobile             │
 ├───────────┬──────────────────────────────────────────┤
-│  SIDEBAR   │              WORKSPACE VIEW              │
-│ workspaces │  terminal grid · kanban · prompt forge    │
+│  SIDEBAR   │              WORKSPACE VIEW             │
+│ workspaces │  terminal grid · kanban · prompt forge  │
 ├───────────┴──────────────────────────────────────────┤
-│  Workshop Manager · PTY Pool · Agent Spawner          │
-│  Task Scheduler · WebSocket · SQLite                  │
+│  Workshop Manager · PTY Pool · Agent Spawner         │
+│  Task Scheduler · WebSocket · SQLite                 │
 └────────────────────────────────────────────────────┘
 ```
 
