@@ -1,8 +1,8 @@
 "use client";
 
+import type * as React from "react";
 import { Reveal } from "@/components/marketing/reveal";
 import { cn } from "@/lib/utils";
-import type * as React from "react";
 
 const cardVariants = {
   base: "bg-mistral-canvas border border-mistral-hairline-soft",

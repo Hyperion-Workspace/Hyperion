@@ -1,22 +1,18 @@
 "use client";
 
+import type { ComponentType, ReactNode } from "react";
 import { CommandPalette } from "@/components/common/command-palette";
 import { HotkeysDialog } from "@/components/common/hotkeys-dialog";
 import { ProfileDrawer } from "@/components/common/profile-drawer";
 import { AppHeader } from "@/components/layout/app-header";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { PanelManager } from "@/components/panels/panel-manager";
+import { SidebarInset, SidebarProvider } from "@/components/sidebar";
+import { Toaster } from "@/components/sonner";
+import { TooltipProvider } from "@/components/tooltip";
 import { navigationData } from "@/config/navigation";
 import { useAppHotkeys } from "@/hooks/use-app-hotkeys";
 import { useWorkspaceShortcuts } from "@/hooks/use-workspace-shortcuts";
-
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/sidebar";
-import { Toaster } from "@/components/sonner";
-import { TooltipProvider } from "@/components/tooltip";
-import type { ComponentType, ReactNode } from "react";
 
 interface AppLayoutProps {
   children: ReactNode;

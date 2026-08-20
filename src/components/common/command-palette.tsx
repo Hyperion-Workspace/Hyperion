@@ -1,13 +1,16 @@
 "use client";
 
-import { NewWorkspaceDialog } from "@/components/common/new-workspace-dialog";
-import { hotkeys } from "@/config/hotkeys";
-import { useDrawerHistory } from "@/hooks/use-drawer-history";
-import { formatHotkeyDisplay } from "@/lib/app-utils";
-import { useCommandPaletteStore } from "@/stores/command-palette-store";
-import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
-import { useWorkspaceStore } from "@/stores/workspace-store";
-import { useTranslations } from "@/i18n";
+import {
+  CornerDownLeftIcon,
+  Keyboard,
+  MoveDown,
+  MoveUp,
+  PanelLeft,
+  Plus,
+  Settings,
+  Terminal,
+} from "lucide-react";
+import React, { useCallback, useState } from "react";
 import {
   Command,
   CommandEmpty,
@@ -18,6 +21,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/command";
+import { NewWorkspaceDialog } from "@/components/common/new-workspace-dialog";
 import {
   Dialog,
   DialogContent,
@@ -34,19 +38,15 @@ import {
 } from "@/components/drawer";
 import { Kbd } from "@/components/kbd";
 import { useSidebar } from "@/components/sidebar";
+import { hotkeys } from "@/config/hotkeys";
+import { useDrawerHistory } from "@/hooks/use-drawer-history";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTranslations } from "@/i18n";
+import { formatHotkeyDisplay } from "@/lib/app-utils";
 import { cn } from "@/lib/utils";
-import {
-  CornerDownLeftIcon,
-  Keyboard,
-  MoveDown,
-  MoveUp,
-  PanelLeft,
-  Plus,
-  Settings,
-  Terminal,
-} from "lucide-react";
-import React, { useCallback, useState } from "react";
+import { useCommandPaletteStore } from "@/stores/command-palette-store";
+import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 function CommandMenuItem({
   children,

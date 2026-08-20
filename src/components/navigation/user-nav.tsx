@@ -1,16 +1,8 @@
 "use client";
 
 import { useClerk, useUser } from "@clerk/clerk-react";
-import { navigationData } from "@/config/navigation";
-import { useAuthStore } from "@/stores/auth-store";
-import { useNotificationStore } from "@/stores/notification-store";
-import { usePanelStore } from "@/stores/panel-store";
-import { useTranslations } from "@/i18n";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/avatar";
+import { ChevronsUpDown } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,7 +17,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/sidebar";
-import { ChevronsUpDown } from "lucide-react";
+import { navigationData } from "@/config/navigation";
+import { useTranslations } from "@/i18n";
+import { useAuthStore } from "@/stores/auth-store";
+import { useNotificationStore } from "@/stores/notification-store";
+import { usePanelStore } from "@/stores/panel-store";
 
 interface UserNavUser {
   avatar: string;

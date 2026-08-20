@@ -119,52 +119,60 @@ jobs:
           releaseId: ${{ needs.create-release.outputs.release_id }}
           args: ${{ matrix.args }}
 
-      # --- Portable archives (for install.sh) ---
-
-      - name: Package archive (Linux)
+      # After tauri-action, also upload portable archive for installer scripts
+      - name: Package portable archive (Linux)
         if: matrix.os_name == 'linux'
         run: |
-          BINARY=$(find src-tauri/target/release/bundle -name "*.AppImage" 2>/dev/null | head -1)
-          [ -z "$BINARY" ] && BINARY="src-tauri/target/release/hyperion"
-
-          if [ -f "$BINARY" ]; then
-            mkdir -p /tmp/hyperion-pkg
-            cp "$BINARY" /tmp/hyperion-pkg/hyperion
-            chmod +x /tmp/hyperion-pkg/hyperion
-            tar -czf /tmp/hyperion_linux_amd64.tar.gz -C /tmp/hyperion-pkg hyperion
+          BINARY_PATH=$(find src-tauri/target/release/bundle -name "*.AppImage" -o -name "hyperion" 2>/dev/null | head -1)
+          
+          if [ -z "$BINARY_PATH" ]; then
+            BINARY_PATH="src-tauri/target/release/hyperion"
+          fi
+          
+          if [ -f "$BINARY_PATH" ]; then
+            mkdir -p /tmp/hyperion-package
+            cp "$BINARY_PATH" /tmp/hyperion-package/hyperion
+            chmod +x /tmp/hyperion-package/hyperion
+            cd /tmp/hyperion-package
+            tar -czf /tmp/hyperion_linux_amd64.tar.gz hyperion
             echo "ARCHIVE_PATH=/tmp/hyperion_linux_amd64.tar.gz" >> $GITHUB_ENV
             echo "ARCHIVE_NAME=hyperion_linux_amd64.tar.gz" >> $GITHUB_ENV
           fi
 
-      - name: Package archive (macOS)
+      - name: Package portable archive (macOS)
         if: matrix.os_name == 'darwin'
         run: |
-          BINARY=$(find src-tauri/target/universal-apple-darwin/release -name "hyperion" 2>/dev/null | head -1)
-          [ -z "$BINARY" ] && BINARY="src-tauri/target/universal-apple-darwin/release/hyperion"
-
-          if [ -f "$BINARY" ]; then
-            mkdir -p /tmp/hyperion-pkg
-            cp "$BINARY" /tmp/hyperion-pkg/hyperion
-            chmod +x /tmp/hyperion-pkg/hyperion
-            tar -czf /tmp/hyperion_darwin_universal.tar.gz -C /tmp/hyperion-pkg hyperion
+          BINARY_PATH=$(find src-tauri/target -name "Hyperion" -o -name "hyperion" 2>/dev/null | grep -v deps | head -1)
+          
+          if [ -z "$BINARY_PATH" ]; then
+            BINARY_PATH="src-tauri/target/universal-apple-darwin/release/hyperion"
+          fi
+          
+          if [ -f "$BINARY_PATH" ]; then
+            mkdir -p /tmp/hyperion-package
+            cp "$BINARY_PATH" /tmp/hyperion-package/hyperion
+            chmod +x /tmp/hyperion-package/hyperion
+            cd /tmp/hyperion-package
+            tar -czf /tmp/hyperion_darwin_universal.tar.gz hyperion
             echo "ARCHIVE_PATH=/tmp/hyperion_darwin_universal.tar.gz" >> $GITHUB_ENV
             echo "ARCHIVE_NAME=hyperion_darwin_universal.tar.gz" >> $GITHUB_ENV
           fi
 
-      - name: Package archive (Windows)
+      - name: Package portable archive (Windows)
         if: matrix.os_name == 'windows'
         shell: pwsh
         run: |
           $binary = Get-ChildItem -Path "src-tauri/target/release" -Filter "hyperion.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+          
           if ($binary) {
-            New-Item -ItemType Directory -Force -Path "$env:TEMP/hyperion-pkg" | Out-Null
-            Copy-Item $binary.FullName "$env:TEMP/hyperion-pkg/hyperion.exe"
-            Compress-Archive -Path "$env:TEMP/hyperion-pkg/hyperion.exe" -DestinationPath "$env:TEMP/hyperion_windows_amd64.zip"
+            New-Item -ItemType Directory -Force -Path "$env:TEMP/hyperion-package" | Out-Null
+            Copy-Item $binary.FullName "$env:TEMP/hyperion-package/hyperion.exe"
+            Compress-Archive -Path "$env:TEMP/hyperion-package/hyperion.exe" -DestinationPath "$env:TEMP/hyperion_windows_amd64.zip"
             echo "ARCHIVE_PATH=$env:TEMP/hyperion_windows_amd64.zip" >> $env:GITHUB_ENV
             echo "ARCHIVE_NAME=hyperion_windows_amd64.zip" >> $env:GITHUB_ENV
           }
 
-      - name: Upload archive to release
+      - name: Upload portable archive to release
         if: env.ARCHIVE_PATH != ''
         uses: softprops/action-gh-release@v2
         with:

@@ -2,8 +2,8 @@
 
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import type { KanbanCard as KanbanCardType } from "@/stores/kanban-store";
 import { GripVertical, Trash2 } from "lucide-react";
+import type { KanbanCard as KanbanCardType } from "@/stores/kanban-store";
 
 interface KanbanCardProps {
   card: KanbanCardType;

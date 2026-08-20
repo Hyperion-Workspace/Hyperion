@@ -1,5 +1,13 @@
 "use client";
 
+import {
+  Check,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Sparkles,
+} from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/button";
 import {
   Card,
@@ -9,14 +17,6 @@ import {
   CardTitle,
 } from "@/components/card";
 import { BorderBeam } from "@/components/landing/border-beam";
-import {
-  Check,
-  ChevronDown,
-  ChevronUp,
-  HelpCircle,
-  Sparkles,
-} from "lucide-react";
-import { useState } from "react";
 
 interface FAQItem {
   answer: string;

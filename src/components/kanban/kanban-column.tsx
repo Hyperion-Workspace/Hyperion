@@ -5,11 +5,11 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import { Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
 import { KanbanCard } from "@/components/kanban/kanban-card";
 import type { KanbanColumn as KanbanColumnType } from "@/stores/kanban-store";
 import { useKanbanStore } from "@/stores/kanban-store";
-import { Plus, Trash2 } from "lucide-react";
-import { useState } from "react";
 
 interface KanbanColumnProps {
   column: KanbanColumnType;

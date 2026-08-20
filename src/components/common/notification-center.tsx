@@ -1,16 +1,7 @@
 "use client";
 
-import {
-  type NotificationItem,
-  notifications,
-} from "@/config/notifications";
-import { useNotificationStore } from "@/stores/notification-store";
-import { useTranslations } from "@/i18n";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/avatar";
+import { Bell } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
 import { Button } from "@/components/button";
 import {
   Empty,
@@ -19,19 +10,12 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/empty";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
 import { ScrollArea } from "@/components/scroll-area";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/tabs";
-import { Bell } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs";
+import { type NotificationItem, notifications } from "@/config/notifications";
+import { useTranslations } from "@/i18n";
+import { useNotificationStore } from "@/stores/notification-store";
 
 export function NotificationCenter() {
   const t = useTranslations("NotificationCenter");

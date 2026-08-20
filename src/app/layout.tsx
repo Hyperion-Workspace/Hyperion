@@ -1,6 +1,6 @@
-import { siteConfig } from "@/config/site";
 import type { Metadata, Viewport } from "next";
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const fontSans = Plus_Jakarta_Sans({

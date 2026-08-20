@@ -1,7 +1,7 @@
 "use client";
 
-import { useWorkspaceStore } from "@/stores/workspace-store";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 /**
  * Registers Ctrl+1 through Ctrl+9 to switch workspaces by position.
