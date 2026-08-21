@@ -87,6 +87,9 @@ function UserNavBase({
           openNotificationCenter(true);
         }, 150);
         break;
+      case "logOut":
+        onLogout();
+        break;
       default:
         break;
     }
@@ -161,8 +164,6 @@ function UserNavBase({
                 )}
               </div>
             ))}
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={onLogout}>Log out</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
