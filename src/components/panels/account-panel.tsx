@@ -1,10 +1,16 @@
 "use client";
 
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/avatar";
+  AlertTriangle,
+  Github,
+  Globe,
+  KeyRound,
+  Monitor,
+  ShieldCheck,
+} from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
 import { Badge } from "@/components/badge";
 import { Button } from "@/components/button";
 import {
@@ -16,16 +22,6 @@ import {
 } from "@/components/card";
 import { Input } from "@/components/input";
 import { Label } from "@/components/label";
-import {
-  AlertTriangle,
-  Github,
-  Globe,
-  KeyRound,
-  Monitor,
-  ShieldCheck,
-} from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 export function AccountPanel() {
   const [displayName, setDisplayName] = useState("Bhagirathsinh Rana");

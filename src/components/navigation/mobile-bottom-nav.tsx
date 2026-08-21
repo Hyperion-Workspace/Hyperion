@@ -1,13 +1,13 @@
 "use client";
 
-import { useCommandPaletteStore } from "@/stores/command-palette-store";
-import { useProfileDrawerStore } from "@/stores/profile-drawer-store";
-import { useTranslations } from "@/i18n";
-import { BorderBeam } from "@/components/landing/border-beam";
-import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import type { ComponentType } from "react";
+import { BorderBeam } from "@/components/landing/border-beam";
+import { useTranslations } from "@/i18n";
+import { cn } from "@/lib/utils";
+import { useCommandPaletteStore } from "@/stores/command-palette-store";
+import { useProfileDrawerStore } from "@/stores/profile-drawer-store";
 
 export interface MobileBottomNavItem {
   href?: string;

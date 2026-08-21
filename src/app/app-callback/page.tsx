@@ -1,4 +1,4 @@
-import { AppCallbackPage } from "@/pages/app-callback-page";
+import { AppCallbackPage } from "@/views/app-callback-page";
 
 export default function RootAppCallback() {
   return <AppCallbackPage />;

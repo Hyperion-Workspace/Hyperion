@@ -2,14 +2,10 @@
 
 import { ClerkProvider, SignIn, useUser } from "@clerk/clerk-react";
 import { dark } from "@clerk/themes";
-import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-import { Label } from "@/components/label";
 import {
   ArrowRight,
   CheckCircle2,
   Cpu,
-  Globe,
   Laptop,
   Loader2,
   Lock,
@@ -18,6 +14,9 @@ import {
   Zap,
 } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
+import { Button } from "@/components/button";
+import { Input } from "@/components/input";
+import { Label } from "@/components/label";
 
 const hasClerkPublishableKey = !!(
   typeof process !== "undefined" &&

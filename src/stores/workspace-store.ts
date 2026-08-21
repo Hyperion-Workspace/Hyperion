@@ -1,8 +1,8 @@
 "use client";
 
-import { safeUUID } from "@/lib/uuid";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { safeUUID } from "@/lib/uuid";
 
 export interface TerminalPane {
   id: string;

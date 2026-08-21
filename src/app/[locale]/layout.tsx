@@ -1,6 +1,6 @@
+import { notFound } from "next/navigation";
 import { messages, NextIntlClientProvider } from "@/i18n";
 import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

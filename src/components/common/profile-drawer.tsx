@@ -1,19 +1,6 @@
 "use client";
 
-import {
-  navigationData,
-  type UserNavItem,
-} from "@/config/navigation";
-import { useDrawerHistory } from "@/hooks/use-drawer-history";
-import { useNotificationStore } from "@/stores/notification-store";
-import { usePanelStore } from "@/stores/panel-store";
-import { useProfileDrawerStore } from "@/stores/profile-drawer-store";
-import { useTranslations } from "@/i18n";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
 import { Button } from "@/components/button";
 import {
   Drawer,
@@ -23,6 +10,12 @@ import {
   DrawerTitle,
 } from "@/components/drawer";
 import { Separator } from "@/components/separator";
+import { navigationData, type UserNavItem } from "@/config/navigation";
+import { useDrawerHistory } from "@/hooks/use-drawer-history";
+import { useTranslations } from "@/i18n";
+import { useNotificationStore } from "@/stores/notification-store";
+import { usePanelStore } from "@/stores/panel-store";
+import { useProfileDrawerStore } from "@/stores/profile-drawer-store";
 
 interface ProfileDrawerProps {
   user: UserNavItem;

@@ -1,10 +1,10 @@
 "use client";
 
+import { useHotkeys } from "react-hotkeys-hook";
+import { useSidebar } from "@/components/sidebar";
 import { hotkeys } from "@/config/hotkeys";
 import { useCommandPaletteStore } from "@/stores/command-palette-store";
 import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
-import { useSidebar } from "@/components/sidebar";
-import { useHotkeys } from "react-hotkeys-hook";
 
 interface UseAppHotkeysOptions {
   navigate: (path: string) => void;

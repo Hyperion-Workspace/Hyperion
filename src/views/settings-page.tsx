@@ -1,7 +1,7 @@
 "use client";
 
-import { AiProviderCard } from "@/components/settings/ai-provider-card";
 import { ScrollArea, ScrollBar } from "@/components/scroll-area";
+import { AiProviderCard } from "@/components/settings/ai-provider-card";
 
 export function SettingsPage() {
   return (

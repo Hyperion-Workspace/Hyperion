@@ -1,11 +1,11 @@
 "use client";
 
 import { useAuth } from "@clerk/clerk-react";
-import { siteConfig } from "@/config/site";
-import { useAuthStore } from "@/stores/auth-store";
-import { useRouter } from "@/i18n/navigation";
 import { ExternalLink, Loader2, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/config/site";
+import { useRouter } from "@/i18n/navigation";
+import { useAuthStore } from "@/stores/auth-store";
 
 interface AuthProviderProps {
   children: React.ReactNode;

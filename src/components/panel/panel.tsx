@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/button";
 import { X } from "lucide-react";
 import {
   AnimatePresence,
@@ -10,6 +9,7 @@ import {
 } from "motion/react";
 import type React from "react";
 import { useEffect } from "react";
+import { Button } from "@/components/button";
 
 interface PanelProps {
   children: React.ReactNode;

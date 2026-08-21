@@ -1,9 +1,6 @@
 "use client";
 
-import { type HotkeyDefinition, hotkeys } from "@/config/hotkeys";
-import { formatHotkeyDisplay } from "@/lib/app-utils";
-import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
-import { useTranslations } from "@/i18n";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -20,8 +17,11 @@ import {
 } from "@/components/drawer";
 import { Kbd, KbdGroup } from "@/components/kbd";
 import { Separator } from "@/components/separator";
+import { type HotkeyDefinition, hotkeys } from "@/config/hotkeys";
 import { useIsMobile } from "@/hooks/use-mobile";
-import React from "react";
+import { useTranslations } from "@/i18n";
+import { formatHotkeyDisplay } from "@/lib/app-utils";
+import { useHotkeysDialogStore } from "@/stores/hotkeys-store";
 
 function HotkeyRow({ hotkey }: { hotkey: HotkeyDefinition }) {
   const t = useTranslations("HotkeysDialog");

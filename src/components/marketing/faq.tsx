@@ -1,10 +1,10 @@
 "use client";
 
-import { Reveal } from "@/components/marketing/reveal";
-import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
 import type * as React from "react";
 import { useState } from "react";
+import { Reveal } from "@/components/marketing/reveal";
+import { cn } from "@/lib/utils";
 
 interface FAQItem {
   answer: string;

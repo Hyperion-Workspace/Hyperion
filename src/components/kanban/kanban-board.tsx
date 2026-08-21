@@ -17,9 +17,9 @@ import {
   horizontalListSortingStrategy,
   SortableContext,
 } from "@dnd-kit/sortable";
+import { useState } from "react";
 import { KanbanColumn } from "@/components/kanban/kanban-column";
 import { useKanbanStore } from "@/stores/kanban-store";
-import { useState } from "react";
 
 export function KanbanBoard() {
   const { addColumn, cards, columns, deleteColumn, moveCard } =

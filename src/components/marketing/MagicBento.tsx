@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { useReducedMotion } from "motion/react";
 import type * as React from "react";
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import "./MagicBento.css";
 
 /**
