@@ -1,6 +1,15 @@
 "use client";
 
-import { useWorkspaceStore } from "@/stores/workspace-store";
+import {
+  FolderOpen,
+  History,
+  LayoutGrid,
+  Sparkles,
+  Terminal,
+} from "lucide-react";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/button";
 import {
   Dialog,
@@ -12,23 +21,9 @@ import {
 } from "@/components/dialog";
 import { Input } from "@/components/input";
 import { Label } from "@/components/label";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs";
 import { cn } from "@/lib/utils";
-import {
-  FolderOpen,
-  History,
-  LayoutGrid,
-  Sparkles,
-  Terminal,
-} from "lucide-react";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 interface NewWorkspaceDialogProps {
   onCreated?: () => void;

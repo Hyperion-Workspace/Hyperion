@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Hyperion",
-  "version": "0.0.1",
-  "identifier": "com.hyperion.app",
+  "version": "1.0.0",
+  "identifier": "com.hyperion.desktop",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:3000/en",

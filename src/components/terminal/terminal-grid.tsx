@@ -2,8 +2,8 @@
 
 import { TerminalPane } from "@/components/terminal/terminal-pane";
 import { useMounted } from "@/hooks/use-mounted";
-import { useWorkspaceStore } from "@/stores/workspace-store";
 import { cn } from "@/lib/utils";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 function getGridClass(count: number): string {
   switch (count) {

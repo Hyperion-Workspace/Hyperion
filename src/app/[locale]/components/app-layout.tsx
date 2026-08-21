@@ -1,8 +1,8 @@
 "use client";
 
+import type React from "react";
 import { AppLayout as MainLayout } from "@/components/layout/app-layout";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import type React from "react";
 
 interface AppLayoutProps {
   children: React.ReactNode;

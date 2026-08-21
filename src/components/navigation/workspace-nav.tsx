@@ -1,10 +1,19 @@
 "use client";
 
-import { useMounted } from "@/hooks/use-mounted";
 import {
-  useWorkspaceStore,
-  type Workspace,
-} from "@/stores/workspace-store";
+  Copy,
+  Edit2,
+  LayoutGrid,
+  MoreHorizontal,
+  Pin,
+  PinOff,
+  Plus,
+  Terminal,
+  Trash2,
+} from "lucide-react";
+import { motion } from "motion/react";
+import { useCallback, useState } from "react";
+import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,21 +30,9 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/sidebar";
+import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
-import {
-  Copy,
-  Edit2,
-  LayoutGrid,
-  MoreHorizontal,
-  Pin,
-  PinOff,
-  Plus,
-  Terminal,
-  Trash2,
-} from "lucide-react";
-import { motion } from "motion/react";
-import { useCallback, useState } from "react";
-import { toast } from "sonner";
+import { useWorkspaceStore, type Workspace } from "@/stores/workspace-store";
 
 interface WorkspaceNavProps {
   navigate: (path: string) => void;

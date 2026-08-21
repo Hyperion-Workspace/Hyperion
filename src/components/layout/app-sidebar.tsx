@@ -1,12 +1,13 @@
 "use client";
 
+import { Settings } from "lucide-react";
+import type * as React from "react";
+import type { ComponentType } from "react";
+import { useState } from "react";
 import { NewWorkspaceDialog } from "@/components/common/new-workspace-dialog";
+import { Logo } from "@/components/landing/logo";
 import { UserNav } from "@/components/navigation/user-nav";
 import { WorkspaceNav } from "@/components/navigation/workspace-nav";
-import { navigationData } from "@/config/navigation";
-import { siteConfig } from "@/config/site";
-import { useMounted } from "@/hooks/use-mounted";
-import { Logo } from "@/components/landing/logo";
 import {
   Sidebar,
   SidebarContent,
@@ -17,10 +18,9 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from "@/components/sidebar";
-import { Settings } from "lucide-react";
-import type * as React from "react";
-import type { ComponentType } from "react";
-import { useState } from "react";
+import { navigationData } from "@/config/navigation";
+import { siteConfig } from "@/config/site";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   LinkComponent?:

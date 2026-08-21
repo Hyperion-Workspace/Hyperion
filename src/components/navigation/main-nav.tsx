@@ -1,6 +1,8 @@
 "use client";
 
-import { useTranslations } from "@/i18n";
+import { ChevronRight, type LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
+import { useCallback } from "react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -18,9 +20,7 @@ import {
   SidebarMenuSubItem,
   useSidebar,
 } from "@/components/sidebar";
-import { ChevronRight, type LucideIcon } from "lucide-react";
-import type { ComponentType } from "react";
-import { useCallback } from "react";
+import { useTranslations } from "@/i18n";
 
 interface MainNavItem {
   href?: string;

@@ -1,6 +1,14 @@
 "use client";
 
-import { useTranslations } from "@/i18n";
+import {
+  Folder,
+  type LucideIcon,
+  MoreHorizontal,
+  Share,
+  Trash2,
+} from "lucide-react";
+import type { ComponentType } from "react";
+import { useCallback } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,15 +25,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/sidebar";
-import {
-  Folder,
-  type LucideIcon,
-  MoreHorizontal,
-  Share,
-  Trash2,
-} from "lucide-react";
-import type { ComponentType } from "react";
-import { useCallback } from "react";
+import { useTranslations } from "@/i18n";
 
 interface ProjectNavItem {
   icon: LucideIcon;
@@ -73,7 +73,9 @@ export function ProjectsNav({
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton asChild={true} isActive={active}>
                 <LinkComponent
-                  data-tooltip={t(item.translationKey as Parameters<typeof t>[0])}
+                  data-tooltip={t(
+                    item.translationKey as Parameters<typeof t>[0]
+                  )}
                   href={item.url}
                   onClick={handleLinkClick}
                 >

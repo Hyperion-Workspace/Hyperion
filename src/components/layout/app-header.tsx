@@ -1,9 +1,7 @@
 "use client";
 
-import { NotificationCenter } from "@/components/common/notification-center";
-import { formatHotkeyDisplay } from "@/lib/app-utils";
-import { useCommandPaletteStore } from "@/stores/command-palette-store";
-import { useWorkspaceStore } from "@/stores/workspace-store";
+import { ChevronRight, Search } from "lucide-react";
+import type { ComponentType } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,9 +9,11 @@ import {
   BreadcrumbPage,
 } from "@/components/breadcrumb";
 import { Button } from "@/components/button";
+import { NotificationCenter } from "@/components/common/notification-center";
 import { Kbd } from "@/components/kbd";
-import { ChevronRight, Search } from "lucide-react";
-import type { ComponentType } from "react";
+import { formatHotkeyDisplay } from "@/lib/app-utils";
+import { useCommandPaletteStore } from "@/stores/command-palette-store";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 interface AppHeaderProps {
   LinkComponent?:

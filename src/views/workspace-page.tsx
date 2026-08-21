@@ -1,12 +1,12 @@
 "use client";
 
+import { LayoutGrid, Plus } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/button";
 import { NewWorkspaceDialog } from "@/components/common/new-workspace-dialog";
 import { TerminalGrid } from "@/components/terminal/terminal-grid";
 import { useMounted } from "@/hooks/use-mounted";
 import { useWorkspaceStore } from "@/stores/workspace-store";
-import { Button } from "@/components/button";
-import { LayoutGrid, Plus } from "lucide-react";
-import { useState } from "react";
 
 export function WorkspacePage() {
   const mounted = useMounted();

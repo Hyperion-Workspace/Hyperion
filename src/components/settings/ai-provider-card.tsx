@@ -1,8 +1,20 @@
 "use client";
 
-import { ProviderFactory } from "@/lib/providers/provider-factory";
-import { useAgentStore } from "@/stores/agent-store";
-import { useWorkspaceStore } from "@/stores/workspace-store";
+import {
+  Activity,
+  CheckCircle2,
+  Database,
+  Globe,
+  KeyRound,
+  RefreshCcw,
+  Server,
+  Sparkles,
+  Terminal,
+  Trash2,
+  XCircle,
+} from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/button";
 import {
   Card,
@@ -20,22 +32,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/select";
+import { ProviderFactory } from "@/lib/providers/provider-factory";
 import { cn } from "@/lib/utils";
-import {
-  Activity,
-  CheckCircle2,
-  Database,
-  Globe,
-  KeyRound,
-  RefreshCcw,
-  Server,
-  Sparkles,
-  Terminal,
-  Trash2,
-  XCircle,
-} from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { toast } from "sonner";
+import { useAgentStore } from "@/stores/agent-store";
+import { useWorkspaceStore } from "@/stores/workspace-store";
 
 function combineUrl(baseUrl: string, path: string): string {
   const cleanBase = baseUrl.trim().endsWith("/")

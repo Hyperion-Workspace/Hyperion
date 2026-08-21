@@ -1,4 +1,3 @@
-import { siteConfig } from "@/config/site";
 import {
   BadgeCheck,
   Bell,
@@ -8,6 +7,7 @@ import {
   Settings,
   Sparkles,
 } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export interface UserNavItem {
   avatar: string;

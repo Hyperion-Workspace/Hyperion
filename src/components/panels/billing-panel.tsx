@@ -1,5 +1,12 @@
 "use client";
 
+import {
+  Calendar,
+  CheckCircle2,
+  CreditCard,
+  Download,
+  ExternalLink,
+} from "lucide-react";
 import { Badge } from "@/components/badge";
 import { Button } from "@/components/button";
 import {
@@ -9,13 +16,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card";
-import {
-  Calendar,
-  CheckCircle2,
-  CreditCard,
-  Download,
-  ExternalLink,
-} from "lucide-react";
 
 interface Invoice {
   amount: string;
