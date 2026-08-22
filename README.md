@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src="https://raw.githubusercontent.com/BhagirathsinhRana378/Hyperion/main/.github/assets/logo-panel.png" alt="Hyperion Logo" width="160" style="border-radius: 20px;" />
+<img src="https://raw.githubusercontent.com/BhagirathsinhRana378/Hyperion/main/.github/assets/logo-website.webp" alt="Hyperion Logo" width="140" style="border-radius: 20px;" />
 
 # ⚡ HYPERION
 
