@@ -2,9 +2,13 @@
 
 <br/>
 
-<img src=".github/assets/logo-website.png" alt="Hyperion Logo" width="130" style="border-radius: 24px; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);" />
+<div align="center">
 
-# ⚡ HYPERION
+<br/>
+
+<img src=".github/assets/logo-video.gif" alt="Hyperion Logo" width="160" style="border-radius: 20px; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);" />
+
+# HYPERION
 
 ### **The Command Center for Parallel AI Coding Agents**
 
@@ -136,11 +140,16 @@ pnpm tauri dev
 
 <br/>
 
-### 🐝 Multi-Agent Swarm Graph (DAG)
+### 🐝 Interactive Workflow Examples
 
-> *Don't wait on one agent. Wire multiple agents in a dependency graph and let them build together!*
+> *Don't wait on one agent. Wire multiple agents in a dependency graph or dispatch via Kanban cards! Click Next below to toggle views.*
 
 <div align="center">
+
+<details open>
+<summary><b>Example 1: Multi-Agent Swarm DAG (Click to collapse / view next example below)</b></summary>
+
+<br/>
 
 ```mermaid
 graph TD
@@ -154,6 +163,25 @@ graph TD
     style C fill:#8b5cf6,stroke:#7c3aed,color:#fff
     style D fill:#10b981,stroke:#059669,color:#fff
 ```
+
+</details>
+
+<details>
+<summary><b>Example 2: Live Kanban Agent Dispatch (Click to open Next Example) ➔</b></summary>
+
+<br/>
+
+```
+┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
+│ 📌 BACKLOG              │ ⚡ DOING (IN SWARM)      │ ✅ COMPLETED            │
+├─────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ • Add Stripe Webhook    │ 🤖 Agent Alpha: Auth    │ • Setup Tauri v2 Shell  │
+│ • Write E2E Tests       │ 🤖 Agent Beta: API      │ • Next.js App Routing   │
+│ • Prompt Forge v1.2     │ 🤖 Agent Gamma: UI      │ • Scoped PTY Grid       │
+└─────────────────────────┴─────────────────────────┴─────────────────────────┘
+```
+
+</details>
 
 </div>
 
