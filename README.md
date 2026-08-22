@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src="https://raw.githubusercontent.com/BhagirathsinhRana378/Hyperion/main/.github/assets/logo-website.webp" alt="Hyperion Logo" width="140" style="border-radius: 20px;" />
+<img src=".github/assets/logo-website.png" alt="Hyperion Logo" width="140" style="border-radius: 20px;" />
 
 # ⚡ HYPERION
 
@@ -13,14 +13,14 @@
 <br/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/BhagirathsinhRana378/Hyperion?style=for-the-badge&color=8b5cf6&label=Stars&logo=github)](https://github.com/BhagirathsinhRana378/Hyperion/stargazers)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/BhagirathsinhRana378/Hyperion/ci.yml?style=for-the-badge&label=Build&logo=githubactions&logoColor=white)](https://github.com/BhagirathsinhRana378/Hyperion/actions)
+[![Stars](https://img.shields.io/github/stars/Hyperion-Workspace/Hyperion?style=for-the-badge&color=8b5cf6&label=Stars&logo=github)](https://github.com/Hyperion-Workspace/Hyperion/stargazers)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Hyperion-Workspace/Hyperion/ci.yml?style=for-the-badge&label=Build&logo=githubactions&logoColor=white)](https://github.com/Hyperion-Workspace/Hyperion/actions)
 [![Tauri v2](https://img.shields.io/badge/Tauri-v2.0-FFC131?style=for-the-badge&logo=tauri&logoColor=black)](https://tauri.app)
 [![Next.js 16](https://img.shields.io/badge/Next.js-v16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 
 <br/>
 
-[🌐 Website](https://hyperions.bond) &nbsp;•&nbsp; [📚 Documentation](https://hyperions.bond/en/docs) &nbsp;•&nbsp; [🚀 Quick Start](#-quick-start) &nbsp;•&nbsp; [🐛 Report Bug](https://github.com/BhagirathsinhRana378/Hyperion/issues) &nbsp;•&nbsp; [💬 Community](https://github.com/BhagirathsinhRana378/Hyperion/discussions)
+[🌐 Website](https://hyperions.bond) &nbsp;•&nbsp; [📚 Documentation](https://hyperions.bond/en/docs) &nbsp;•&nbsp; [🚀 Quick Start](#-quick-start) &nbsp;•&nbsp; [🐛 Report Bug](https://github.com/Hyperion-Workspace/Hyperion/issues) &nbsp;•&nbsp; [💬 Community](https://github.com/Hyperion-Workspace/Hyperion/discussions)
 
 <br/>
 
@@ -86,7 +86,7 @@ Launch Hyperion natively in **under 60 seconds**:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/BhagirathsinhRana378/Hyperion.git
+git clone https://github.com/Hyperion-Workspace/Hyperion.git
 
 # 2. Navigate to root
 cd Hyperion
@@ -229,7 +229,7 @@ Check out our [Contributing Guidelines](CONTRIBUTING.md) and [Architecture Docs]
 
 ## 📄 License & Attribution
 
-Distributed under the **MIT License**. Created with ❤️ by **[BhagirathsinhRana378](https://github.com/BhagirathsinhRana378)** and open-source contributors.
+Distributed under the **MIT License**. Created with ❤️ by **[Hyperion-Workspace](https://github.com/Hyperion-Workspace)** and open-source contributors.
 
 <br/>
 
