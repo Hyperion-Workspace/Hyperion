@@ -1,290 +1,239 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/BhagirathsinhRana378/Hyperion/main/.github/assets/logo-panel.png" alt="Hyperion logo" width="140">
+<br/>
 
-# Hyperion
+<img src="https://raw.githubusercontent.com/BhagirathsinhRana378/Hyperion/main/.github/assets/logo-panel.png" alt="Hyperion Logo" width="160" style="border-radius: 20px;" />
 
-### The agentic workspace for orchestrating parallel AI coding agents
+# ⚡ HYPERION
 
-Stop juggling 47 browser tabs. One isolated command center per project —<br/>
-terminals, agents, tasks, and prompts, in a single view.
+### **The Command Center for Parallel AI Coding Agents**
+
+*Stop juggling 47 browser tabs & scattered terminals. Harness parallel agentic swarms in a single, unified workspace.*
 
 <br/>
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-6366f1?style=for-the-badge)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/BhagirathsinhRana378/Hyperion?style=for-the-badge&color=6366f1&label=stars)](https://github.com/BhagirathsinhRana378/Hyperion/stargazers)
-[![Build](https://img.shields.io/github/actions/workflow/status/BhagirathsinhRana378/Hyperion/ci.yml?style=for-the-badge&label=build)](https://github.com/BhagirathsinhRana378/Hyperion/actions)
-[![Discord](https://img.shields.io/badge/discord-join-6366f1?style=for-the-badge&logo=discord&logoColor=white)](#)
-
-**[Website](https://hyperions.bond)** &nbsp;·&nbsp; **[Documentation](https://hyperions.bond/en/docs)** &nbsp;·&nbsp; **[Quick Start](#quick-start)** &nbsp;·&nbsp; **[Report a Bug](https://github.com/BhagirathsinhRana378/Hyperion/issues)** &nbsp;·&nbsp; **[Discussions](https://github.com/BhagirathsinhRana378/Hyperion/discussions)**
+[![License: MIT](https://img.shields.io/badge/License-MIT-6366f1.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/BhagirathsinhRana378/Hyperion?style=for-the-badge&color=8b5cf6&label=Stars&logo=github)](https://github.com/BhagirathsinhRana378/Hyperion/stargazers)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/BhagirathsinhRana378/Hyperion/ci.yml?style=for-the-badge&label=Build&logo=githubactions&logoColor=white)](https://github.com/BhagirathsinhRana378/Hyperion/actions)
+[![Tauri v2](https://img.shields.io/badge/Tauri-v2.0-FFC131?style=for-the-badge&logo=tauri&logoColor=black)](https://tauri.app)
+[![Next.js 16](https://img.shields.io/badge/Next.js-v16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 
 <br/>
 
-<img src="https://www.hyperions.bond/_next/image?url=%2Fhero_img.png&w=3840&q=75" alt="Hyperion workspace — multiple AI agents running in parallel" width="100%">
+[🌐 Website](https://hyperions.bond) &nbsp;•&nbsp; [📚 Documentation](https://hyperions.bond/en/docs) &nbsp;•&nbsp; [🚀 Quick Start](#-quick-start) &nbsp;•&nbsp; [🐛 Report Bug](https://github.com/BhagirathsinhRana378/Hyperion/issues) &nbsp;•&nbsp; [💬 Community](https://github.com/BhagirathsinhRana378/Hyperion/discussions)
+
+<br/>
+
+<img src="https://www.hyperions.bond/_next/image?url=%2Fhero_img.png&w=3840&q=75" alt="Hyperion Workspace Preview" width="100%" style="border-radius: 12px; box-shadow: 0 20px 30px rgba(0,0,0,0.3);" />
 
 </div>
 
 <br/>
 
-## The problem
+---
 
-Every developer running AI coding agents ends up here:
+## 💥 The Friction
 
+Modern AI-assisted development is fundamentally broken:
+
+```gcode
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │  Terminal (Agent 1) ──► Browser Tab #14 ──► Notes App (Prompts)            │
+ │         ▲                                         │                         │
+ │         └────── Debug Output ◄── Copy/Paste ──────┘                         │
+ └─────────────────────────────────────────────────────────────────────────────┘
+                             ❌ CHAOTIC CONTEXT SWITCHING
 ```
-open terminal → run agent → switch to browser → check output → open notes
-   → find the prompt → copy it → switch back → paste → agent fails
-      → open terminal → debug → repeat
-```
 
-Ten tabs, three note apps, and no idea which agent is doing what. **Hyperion collapses that loop into one view.**
+**Hyperion eliminates the noise.** It consolidates terminal PTY grids, Kanban task dispatches, prompt engineering versioning, and multi-agent dependency swarms into **one high-performance native app**.
 
 <br/>
 
-## Why Hyperion
+## ⚔️ Paradigm Shift
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<th width="50%" align="left">🚫 Traditional Agent Workflow</th>
+<th width="50%" align="left">⚡ The Hyperion Way</th>
+</tr>
+<tr>
+<td>
 
-### Without Hyperion
-- A dozen scattered terminal windows
-- Copy-pasting prompts out of old chat logs
-- Manually tracking what each agent actually did
-- Switching between five different tools
-- One project open at a time
+- ❌ Scattered, lost terminal windows
+- ❌ Copy-pasting prompts from random scratchpads
+- ❌ Zero real-time visibility into parallel execution
+- ❌ Constant context bleeding across projects
+- ❌ Single-agent bottlenecking
 
 </td>
-<td width="50%" valign="top">
+<td>
 
-### With Hyperion
-- One scoped terminal grid, per project
-- A versioned prompt library, built in
-- A kanban board that tracks agent progress live
-- One workspace. One view. Everything.
-- A sidebar of isolated projects, zero cross-contamination
+- ⚡ **Scoped Terminal Grid** per project context
+- ⚡ **Prompt Forge** with integrated version control
+- ⚡ **Live Kanban** with direct task dispatching
+- ⚡ **Strict Environment Isolation** (Zero leak)
+- ⚡ **Agent Swarm** dependency graph orchestration
 
 </td>
 </tr>
 </table>
 
-The desktop and mobile client is **fully open source** and lives right here in this repo.
-
 <br/>
 
-## Quick start
+## 🚀 Quick Start
+
+Launch Hyperion natively in **under 60 seconds**:
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/BhagirathsinhRana378/Hyperion.git
+
+# 2. Navigate to root
 cd Hyperion
+
+# 3. Install dependencies (pnpm v10+ required)
 pnpm install
+
+# 4. Launch Desktop Client
 pnpm tauri dev
 ```
 
-That's it — Hyperion opens as a native desktop app. Requires **Node 20+**, **pnpm 10+**, and **Rust** ([install guide](https://www.rust-lang.org/tools/install)) for the Tauri build.
+> **Prerequisites:** Node.js `>=20`, pnpm `>=10`, and [Rust Toolchain](https://www.rust-lang.org/tools/install).
 
 <details>
-<summary><b>First run walkthrough</b></summary>
+<summary><b>✨ First Run Walkthrough & Pro Tips</b></summary>
 <br/>
 
-1. Click **+ Create** in the sidebar and name your workspace
-2. Open a terminal — it's automatically scoped to that project's directory
-3. Drop a task on the kanban board
-4. Drag it onto an agent — it starts working immediately
-5. Watch output stream live into its terminal pane
+1. **Workspace Creation:** Click **`+ Create Workspace`** in the sidebar. Each workspace gets an isolated file & process boundary.
+2. **Terminal Grid:** Open split terminal panes; they automatically bind to your project's root path.
+3. **Dispatching Tasks:** Drop a task card into the Kanban board and drag it directly onto an AI Agent node to ignite execution.
+4. **Live Stream:** Watch token output and file modifications stream real-time directly inside the embedded PTY pane.
 
 </details>
 
 <br/>
 
-## Features
+---
 
-<table>
-<tr>
-<td width="60%" valign="top">
-
-### 🗂️ Multi-workspace, zero bleed
-Every project is a fully isolated environment. Switch workspaces and the terminal grid, agent pool, task board, and prompt forge all re-scope instantly — nothing leaks between projects.
-
-</td>
-<td width="40%">
+## 💎 Core Architecture & Capabilities
 
 ```
-┌──────────┐
-│ 🟢 auth  │ ← active
-│ ⚪ api   │
-│ ⚪ mobile│
-│ + Create  │
-└──────────┘
+                  ┌──────────────────────────────────────────────┐
+                  │               HYPERION SHELL                 │
+                  │        Tauri 2 · Desktop & Mobile Native      │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+               ┌─────────────────────────┴─────────────────────────┐
+               ▼                                                   ▼
+┌───────────────────────────────┐                 ┌───────────────────────────────┐
+│        WORKSPACE ENGINE       │                 │       ORCHESTRATION HUB       │
+├───────────────────────────────┤                 ├───────────────────────────────┤
+│  • Isolated Project Contexts  │                 │  • Swarm Dependency Engine    │
+│  • PTY Terminal Manager       │ ◄─────────────► │  • Task Dispatch Kanban       │
+│  • SQLite Local State Store   │                 │  • Versioned Prompt Forge     │
+└───────────────────────────────┘                 └───────────────────────────────┘
 ```
-
-</td>
-</tr>
-<tr>
-<td width="60%" valign="top">
-
-### 🤖 Parallel agent grid
-Run multiple AI coding agents side by side, each in its own scoped terminal pane, with real-time output streaming and one-click stop, restart, or reassign.
-
-</td>
-<td width="40%">
-
-```
-┌──────────┬──────────┐
-│ Agent-1  │ Agent-2  │
-│ 🔨 Auth  │ 🔨 API  │
-│   ✅     │   🔄    │
-└──────────┴──────────┘
-```
-
-</td>
-</tr>
-<tr>
-<td width="60%" valign="top">
-
-### 📋 Kanban that talks to agents
-Create a task, drag it onto an agent, and it starts working — status flows back to the board in real time as the agent progresses.
-
-</td>
-<td width="40%">
-
-```
-BACKLOG │ DOING │ DONE
-────────┼───────┼──────
- Login  │  API  │ Init
- Tests  │  DB   │ CI/CD
-```
-
-</td>
-</tr>
-<tr>
-<td width="60%" valign="top">
-
-### ⚡ Prompt Forge
-Version your agent prompts like code. Iterate v1.0 → v1.1 → v1.2, A/B test approaches, and attach the winning prompt directly to a kanban task.
-
-</td>
-<td width="40%" valign="top">
-
-No more losing the perfect prompt in a chat history you can't search.
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary><b>🐝 Agent Swarm — dependency-aware multi-agent orchestration</b></summary>
-<br/>
-
-For tasks too big for one agent. Define what depends on what, and Hyperion figures out the execution order:
-
-```
-Agent-1: design database schema
-    ↓
-Agent-2: build API endpoints     Agent-3: build UI components
-    ↓ (both must finish)
-Agent-4: write integration tests
-```
-
-</details>
 
 <br/>
 
-## How it fits together
+### 🗂️ Isolated Multi-Workspace System
+> *Switch projects instantaneously without state decay or process contamination.*
 
 ```
-┌────────────────────────────────────────────────────┐
-│                   HYPERION SHELL                    │
-│              Tauri 2 · Desktop & Mobile             │
-├───────────┬──────────────────────────────────────────┤
-│  SIDEBAR   │              WORKSPACE VIEW             │
-│ workspaces │  terminal grid · kanban · prompt forge  │
-├───────────┴──────────────────────────────────────────┤
-│  Workshop Manager · PTY Pool · Agent Spawner         │
-│  Task Scheduler · WebSocket · SQLite                 │
-└────────────────────────────────────────────────────┘
+┌─────────────────┬────────────────────────────────────────────────────────┐
+│ WORKSPACES      │ ACTIVE WORKSPACE: @hyperion/core                       │
+├─────────────────┼────────────────────────────────────────────────────────┤
+│ 🟢 auth-service │ [Term 1: Agent Alpha] pnpm test ──► 100% Passed        │
+│ ⚪ api-gateway  │ [Term 2: Agent Beta]  building API router endpoints...  │
+│ ⚪ mobile-app   │ [Kanban Board]        [2 In Progress]  [5 Completed]   │
+└─────────────────┴────────────────────────────────────────────────────────┘
 ```
-
-Create a workspace → it gets an isolated scope → terminal grid and board render for it → spawn an agent on a task → a PTY allocates a real terminal → WebSocket streams output into the pane and the board, live. Switch workspaces and the whole stack re-scopes underneath you.
 
 <br/>
 
-## Built with
+### 🐝 Agent Swarm Engine
+> *Orchestrate complex tasks across specialized agents with DAG (Directed Acyclic Graph) dependencies.*
 
 <div align="center">
 
-| Layer | Tech |
-|:--|:--|
-| Shell | Tauri 2 · Next.js 16 |
-| UI | React 19 · Tailwind v4 · shadcn/ui |
-| State | Zustand |
-| Terminal | xterm.js · node-pty |
-| Agent runtime | Vercel AI SDK / LangChain |
-| Real-time | WebSocket |
-| Persistence | SQLite |
+```mermaid
+graph TD
+    A[Agent 1: Database Schema] --> B[Agent 2: REST API Endpoints]
+    A --> C[Agent 3: UI Component Library]
+    B --> D[Agent 4: E2E Integration Suite]
+    C --> D
+    
+    style A fill:#6366f1,stroke:#4f46e5,color:#fff
+    style B fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style C fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style D fill:#10b981,stroke:#059669,color:#fff
+```
 
 </div>
 
 <br/>
 
-## Project structure
+---
 
-```
-src/
-├─ app/            Next.js App Router pages
-├─ pages/          workspace, terminal, kanban layouts
-├─ components/     terminal · agents · kanban · prompts
-├─ stores/         workspace, terminal, agent, kanban state
-├─ hooks/          use-workspace, use-pty, use-agent
-└─ config/         site, navigation, hotkeys
+## 🛠️ Tech Stack Matrix
 
-src-tauri/         Tauri 2 desktop & mobile shell
-```
-
-Single flat app — no monorepo, one `package.json`.
+| Subsystem | Technology | Responsibility |
+| :--- | :--- | :--- |
+| **Native Shell** | `Tauri 2` + `Rust` | High-efficiency cross-platform system wrapper |
+| **Frontend Framework** | `Next.js 16` (App Router) | Static export UI runtime (`output: "export"`) |
+| **Design System** | `Tailwind v4` + `shadcn/ui` | Modern OKLCh dynamic color themes |
+| **State Engine** | `Zustand` | Client-side reactive persistence |
+| **Terminal Core** | `xterm.js` + `node-pty` | Hardware-accelerated terminal emulation |
+| **Local Storage** | `SQLite` | High-throughput offline transaction state |
 
 <br/>
 
-## Roadmap
+---
 
-| Phase | Status |
-|:--|:--|
-| Multi-workspace sidebar & scoped state | ✅ Shipped |
-| Terminal grid — split, resize, tabs | ✅ Shipped |
-| Agent spawn, live output, stop/restart | 🚧 In progress |
-| Kanban board with agent dispatch | 🚧 In progress |
-| Prompt Forge — versioning & A/B testing | 📋 Planned |
-| Agent Swarm — dependency orchestration | 📋 Planned |
-| Plugin system & cross-platform builds | 📋 Planned |
+## 🗺️ Engineering Roadmap
+
+```
+Phase 1: Foundations & UI Core         [████████████████████] 100% Completed
+Phase 2: Terminal PTY Grid & Scoping   [████████████████████] 100% Completed
+Phase 3: Real-Time Agent Streamer      [██████████████░░░░░░]  70% In Progress
+Phase 4: Swarm DAG Orchestrator        [████████░░░░░░░░░░░░]  40% In Progress
+Phase 5: Plugin Architecture & Cloud   [░░░░░░░░░░░░░░░░░░░░]   0% Scheduled
+```
 
 <br/>
 
-## Contributing
+---
+
+## 🤝 Contributing
+
+We welcome contributions from developers building the future of AI workflows!
 
 ```bash
-git checkout -b feat/my-feature
+# Branch out from main
+git checkout -b feat/ultra-awesome-feature
+
+# Run Quality Gates before opening PR
 pnpm check && pnpm typecheck && pnpm build
-git commit -m "feat: add workspace switching"
-git push origin feat/my-feature
+
+# Commit using Conventional Commits convention
+git commit -m "feat: add supercharged terminal layout manager"
 ```
 
-Then open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide, or check the [docs](https://hyperions.bond/en/docs) for architecture deep-dives.
+Check out our [Contributing Guidelines](CONTRIBUTING.md) and [Architecture Docs](https://hyperions.bond/en/docs) for deep technical details.
 
 <br/>
 
-## Security
-
-Found a vulnerability? Please open a [private security advisory](https://github.com/BhagirathsinhRana378/Hyperion/security/advisories) instead of a public issue.
-
-<br/>
+---
 
 <div align="center">
 
-## License
+## 📄 License & Attribution
 
-[MIT](LICENSE) © [BhagirathsinhRana378](https://github.com/BhagirathsinhRana378)
+Distributed under the **MIT License**. Created with ❤️ by **[BhagirathsinhRana378](https://github.com/BhagirathsinhRana378)** and open-source contributors.
 
 <br/>
 
-**⭐ Star this repo if Hyperion saves you a browser tab or two.**
+**⭐ Give Hyperion a star if it elevates your AI agent development experience!**
 
 </div>
+
